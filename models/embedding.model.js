@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const FictionSchema = new mongoose.Schema(
+const EmbeddingSchema = new mongoose.Schema(
     {
         title: {
             type: String,
@@ -33,6 +33,6 @@ const FictionSchema = new mongoose.Schema(
     }
 );
 
-const Fiction = mongoose.model('Fiction', FictionSchema);
+const Embedding = mongoose.model('Embedding', EmbeddingSchema);
 
-module.exports = {Fiction}
+module.exports = {Embedding}

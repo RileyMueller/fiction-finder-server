@@ -1,4 +1,4 @@
-const {Fiction} = require('../models/fiction.model');
+const {Embedding} = require('../models/embedding.model');
 const fs = require('fs');
 const {parse} = require('csv-parse/sync');
 const pathJoin = require('path').join;
@@ -16,7 +16,7 @@ for (let row of rows){
         continue;
     }
         
-    const doc = new Fiction({
+    const doc = new Embedding({
         title: row['title'],
         author: row['author'],
         url: row['url'],
