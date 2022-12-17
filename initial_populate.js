@@ -3,7 +3,7 @@
  */
 
 
-const seedDatabase = require('./tests/seed');
+const {seedDatabase} = require('./tests/seed');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
 

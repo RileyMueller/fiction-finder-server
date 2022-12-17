@@ -48,7 +48,7 @@ const SimilarityListSchema = new mongoose.Schema({
 });
 
 // similaritylists get an incremented version number per source_fiction
-SimilarityList.pre("save", async function (next) {
+SimilarityListSchema.pre("save", async function (next) {
     try {
         // Attempt find counter for the fiction
         const counter = await Counter.findById(this.source_fiction_id);

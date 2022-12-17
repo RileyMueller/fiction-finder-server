@@ -48,7 +48,11 @@ const FictionSchema = new mongoose.Schema(
                     source_fiction_id: this._id
                 }, 'items', {sort: {version: -1} }).exec();
 
-                return joinFictionsWithSimilarityListItems(latestSimilarities.items);
+                if (latestSimilarities.length != 0){
+                    return joinFictionsWithSimilarityListItems(latestSimilarities.items);
+                }else{
+                    return {msg: 'No similarities saved yet'};
+                }                
             },            
         }
     }

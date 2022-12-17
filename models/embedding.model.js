@@ -15,7 +15,6 @@ const EmbeddingSchema = new mongoose.Schema({
     // Auto-generated on save()
     version: {
         type: Number,
-        required: true,
         immutable: true,
     },
     n_sample_tokens: {
@@ -34,7 +33,7 @@ const EmbeddingSchema = new mongoose.Schema({
 EmbeddingSchema.pre("save", async function (next) {
     try {
         // Attempt find counter for the fiction
-        const counter = await Counter.findById(this.fiction_id);
+        let counter = await Counter.findById(this.fiction_id);
         if (!counter) {
             counter = new Counter({ _id: this.fiction_id, count: 0 });
         }
