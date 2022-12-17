@@ -33,13 +33,6 @@ for (let row of rows) {
     });
 }
 
-
-function setFictionId(err, doc){
-    if (err){}
-    
-    n++;
-}
-
 async function seedDatabase() {
     if (fictions.length != embeddings.length) {
         console.error("FICTION AND EMBEDDINGS ARRAYS ARE NOT THE SAME LENGTH");
